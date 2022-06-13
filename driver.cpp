@@ -1,5 +1,5 @@
 #include <iostream>
-#include ".\queue.hpp"
+#include "queue.hpp"
 #include <string>
 using namespace std;
 
