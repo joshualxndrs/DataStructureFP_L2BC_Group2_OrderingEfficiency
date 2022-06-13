@@ -107,10 +107,10 @@ bool queue<X>::isFull() {
     return (size() == capacity); //will return true if size() is filled to the max capacity and false if not.
 }
 
-//function to check if the queue is full or not
+//function to check the max size of the queue
 template <class X>
 int queue<X>::totalSize() {
-    return capacity; //will return true if size() is filled to the max capacity and false if not.
+    return capacity; //will return the number that represents the declared size of the queue 
 }
 
 //function to display the elements inside the queue
