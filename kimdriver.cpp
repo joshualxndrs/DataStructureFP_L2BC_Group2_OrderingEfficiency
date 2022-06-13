@@ -88,8 +88,8 @@ int main(){
                         break;
 
                     case 5:
-                        break;
                         cout<<"CLOSING ORDER \n"<<endl;
+                        break;
                     
                     default:
                         cout<<"Invalid Input";
@@ -97,6 +97,8 @@ int main(){
                 }
 
             } while(menuCategory != 5);
+        
+        break;
 
     }
 
