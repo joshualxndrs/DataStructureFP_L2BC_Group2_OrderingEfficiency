@@ -123,8 +123,8 @@ void queue<X>::display()
     }else
     {
         for (int i = front; i <= rear; i++) //will traverse through the queue and print i element then increments itself to print the next element
-            cout << arr[i] << " ";
-        cout << endl;
+            cout << "Order No : " << i+1 << " \n" << arr[i] << "\n-------------------"  << endl;
+
     }
 }
 
