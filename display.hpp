@@ -1,6 +1,14 @@
 #include <iostream>
 using namespace std;
 
+void chooseDS(){
+    cout<<"========================================================\n"<<endl;
+    cout<<"1. Queues"<<endl;
+    cout<<"2. Linked Lists"<<endl;
+    cout<<"3. Priority Queue"<<endl;
+    cout<<"========================================================\n"<<endl;
+}
+
 void introduction(){
     cout<<"\n================================================================================================================================\n\n";
     cout<<"     _,ggg,_                                                ,gggggggggggggg                      ,ggggggg,                   \n";
