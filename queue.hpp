@@ -119,11 +119,9 @@ void queue<X>::display()
 {
     if (isEmpty())
     {
-        cout << "Queue is empty" << endl;
         return;
     }else
     {
-        cout << "Queue elements are : ";
         for (int i = front; i <= rear; i++) //will traverse through the queue and print i element then increments itself to print the next element
             cout << arr[i] << " ";
         cout << endl;
