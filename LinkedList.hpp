@@ -109,12 +109,12 @@ void dsa::LinkedList<T>::add(T data)
         this->listsize++;
         return;
     }
-
     // LIST IS NOT EMPTY
     this->tail->next = newNode;
     this->tail = newNode;
     this->listsize++;
     return;
+
 }
 
 //FINDING THE INDEX OF AN ELEMENT IN THE LIST
@@ -143,7 +143,7 @@ void dsa::LinkedList<T>::display()
 {
     dsa::Node<T> *traverseNode = head;
 
-    if(listsize>0){
+    if(listsize>1){
         while (traverseNode != NULL)
         {
             cout << "Order No : " << findIndex(traverseNode->data) + 1<<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
@@ -151,9 +151,12 @@ void dsa::LinkedList<T>::display()
         }
     }
     
+    else if(listsize==1){
+        cout << "Order No : " << findIndex(traverseNode->data) + 1<<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
+    }
+
     else{
-        cout<< "Order list empty."<<endl;
-        cout << traverseNode->data << endl;
+        cout << "There are no orders" << endl;
     }
 }
 
