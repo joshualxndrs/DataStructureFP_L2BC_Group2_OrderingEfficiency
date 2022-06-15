@@ -14,8 +14,14 @@ int main(){
     string customerTotalTemp;
     double customerTotal = 0.00;
     
+<<<<<<< Updated upstream
 
     // queue<string> cusOrder;
+=======
+    // queue<string> cusOrder;
+
+    // dsa::LinkedList<string> cusName;
+>>>>>>> Stashed changes
     dsa::LinkedList<string> cusOrder;
 
     do{
@@ -31,7 +37,10 @@ int main(){
                 cin>>customerName;
                 customerOrder.append(customerName + "\n\n");
                 customerOrder.append(".....ORDERS : .....\n");
+<<<<<<< Updated upstream
                 
+=======
+>>>>>>> Stashed changes
                 displayMenu();
 
                 do{
@@ -136,8 +145,12 @@ int main(){
                 break;
 
             case 4:
+<<<<<<< Updated upstream
                 cusOrder.clear();
                 cout<<"Order list cleared !"<<endl;
+=======
+                // cusOrder.clear();
+>>>>>>> Stashed changes
                 break;
 
             case 5:
