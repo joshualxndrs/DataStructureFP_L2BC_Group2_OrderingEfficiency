@@ -33,11 +33,12 @@ namespace dsa
         // PROPERTIES
         dsa::Node<T> *head;
         dsa::Node<T> *tail;
-        int size;
+        int listsize;
 
         // CONSTRUCTORS
-        LinkedList() : head(NULL), tail(NULL), size(0){};
-        int capacity = size;
+        LinkedList() : head(NULL), tail(NULL), listsize(0){};
+        int capacity = listsize;
+        int front = 0;
         int count = 0;
 
         // FUNCTIONS
@@ -93,18 +94,18 @@ void dsa::LinkedList<T>::add(T data)
     dsa::Node<T> *newNode = new dsa::Node<T>(data);
 
     // LIST IS EMPTY
-    if (size == 0)
+    if (listsize == 0)
     {
         this->head = newNode;
         this->tail = newNode;
         this->head->next = tail;
-        this->size++;
+        this->listsize++;
         return;
     }
     // LIST IS NOT EMPTY
     this->tail->next = newNode;
     this->tail = newNode;
-    this->size++;
+    this->listsize++;
     return;
 }
 
@@ -139,10 +140,6 @@ void dsa::LinkedList<T>::checkCap()
     {
         cout << "The List is empty\n";
     }
-    else if (isFull())
-    {
-        cout << "The List is full\n";
-    }
     else
     {
         cout << "The List is not empty\n";
@@ -171,6 +168,7 @@ void dsa::LinkedList<T>::remove()
     }
 }
 
+
 template <typename T>
 void dsa::LinkedList<T>::peek()
 {
@@ -181,6 +179,6 @@ void dsa::LinkedList<T>::peek()
     }
     else
     {
-        cout << "The 1st Order is " << arr[head] << endl;
+        cout << "The 1st Order is " << this->head << endl;
     }
 }

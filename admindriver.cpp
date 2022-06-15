@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include "queue.hpp"
+#include "LinkedList.hpp"
 #include "display.hpp"
 #include <string>
 using namespace std;
@@ -13,8 +14,8 @@ int main(){
     string customerTotalTemp;
     double customerTotal = 0.00;
 
-    queue<string> cusName(100);
-    queue<string> cusOrder(100);
+    dsa::LinkedList<string> cusName;
+    dsa::LinkedList<string> cusOrder;
 
     do{
         double customerTotal = 0.00;
