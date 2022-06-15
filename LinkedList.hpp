@@ -42,26 +42,16 @@ namespace dsa
 
         // FUNCTIONS
         void add(T data);
-
         void display();
-
         int size();
-
         int totalsize();
-
         bool isEmpty();
-
         void remove();
-
         void peek();
-
         void clear();
-
         int findIndex(T data);
     };
 };
-
-// IMPLEMENATIONS -----------------------------------------------------------------------------------
 
 // CLASS FUNCTIONS
 // SET DATA IN NODE
@@ -142,7 +132,8 @@ template <typename T>
 void dsa::LinkedList<T>::display()
 {
     dsa::Node<T> *traverseNode = head;
-
+    
+    // IF THERE IS MORE THAN ONE ITEM
     if(listsize>1){
         while (traverseNode != NULL)
         {
@@ -150,11 +141,13 @@ void dsa::LinkedList<T>::display()
             traverseNode = traverseNode->next;
         }
     }
-    
+
+    // IF THERE IS ONLY ONE ITEM
     else if(listsize==1){
         cout << "Order No : " << findIndex(traverseNode->data) + 1<<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
     }
 
+    // IF LIST IS EMPTY
     else{
         cout << "There are no orders" << endl;
     }
@@ -180,13 +173,26 @@ template <typename T>
 void dsa::LinkedList<T>::remove()
 {
     dsa::Node<T> *traverseNode = head;
+
+    // IF LIST IS EMPTY
     if(traverseNode == NULL)
     {
         cout<<"Order list is empty."<<endl;
     }
+
+    // IF THERE IS ONLY ONE ITEM
+    else if(listsize == 1)
+    {
+        this->head = NULL;
+        this->tail = NULL;
+        listsize--;
+    }
+
+    // IF THERE IS MORE THAN ONE ITEM
     else
     {
         head = head -> next;
+        listsize--;
         free(traverseNode);
    }
 }
@@ -196,15 +202,27 @@ template <typename T>
 void dsa::LinkedList<T>::clear()
 {
     dsa::Node<T> *traverseNode = head;
-    if(listsize>0){
+
+    // IF LIST IS NOT EMPTY
+    if(listsize>1){
+        // WHILE LOOP THAT CLEARS EACH NODE
         while (traverseNode != NULL)
         {
             head = head -> next;
             free(traverseNode);
             traverseNode = traverseNode->next;
+            listsize--;
         }
     }
-    
+
+    // IF THERE IS ONLY ONE ITEM
+    else if(listsize == 1){
+        this->head = NULL;
+        this->tail = NULL;
+        listsize--;
+    }
+
+    // IF LIST IS EMPTY
     else{
         cout<<"Order List is empty"<<endl;
     }

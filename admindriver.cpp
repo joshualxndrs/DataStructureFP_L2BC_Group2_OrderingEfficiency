@@ -121,11 +121,20 @@ int main(){
                     }
                 } while(orderNum !=11);
 
-                
+                // CALCULATE TOTAL PRICE
                 customerOrder.append("...................\n");
+
+                // CONVERTS CUSTOMERTOTAL TO STRING
                 customerTotalTemp = to_string(customerTotal);
+                customerTotalTemp.resize(5);
+
+                // APPENDS TOTAL
                 customerOrder.append("\nTotal Price : $" + customerTotalTemp + "\n");
+
+                // ADDS CUSTOMER'S ORDER 
                 cusOrder.add(customerOrder);
+
+                // RESETS VARIABLES FOR NEXT CUSTOMER
                 customerOrder = "";
                 customerTotalTemp ="";
                 customerTotal=0;
