@@ -55,11 +55,8 @@ namespace dsa
 
         void peek();
 
-<<<<<<< Updated upstream
         void clear();
 
-=======
->>>>>>> Stashed changes
         int findIndex(T data);
     };
 };
@@ -120,7 +117,6 @@ void dsa::LinkedList<T>::add(T data)
     return;
 }
 
-<<<<<<< Updated upstream
 //FINDING THE INDEX OF AN ELEMENT IN THE LIST
 template <typename T>
 int  dsa::LinkedList<T>::findIndex(T data){
@@ -141,29 +137,6 @@ int  dsa::LinkedList<T>::findIndex(T data){
     return -1;                  
 }
 
-=======
-//Function for finding the node
-template <typename T>
-int  dsa::LinkedList<T>::findIndex(T data){
-	//Used to keep track of the Node Index
-	int index = 0;  
-
-	dsa::Node<T> *traverseNode = head;
-	//LinkedList traversal for finding the node
-	while(traverseNode!=NULL){
-		if(traverseNode->data == data){         
-			//If element found return index
-			return index;               
-		}
-		traverseNode = traverseNode->next;
-		index++;
-	}   
-	//If element not found
-	return -1;                  
-}
-
-
->>>>>>> Stashed changes
 // PRINT ALL ELEMENTS IN THE LIST
 template <typename T>
 void dsa::LinkedList<T>::display()
@@ -173,11 +146,7 @@ void dsa::LinkedList<T>::display()
     if(listsize>0){
         while (traverseNode != NULL)
         {
-<<<<<<< Updated upstream
             cout << "Order No : " << findIndex(traverseNode->data) + 1 <<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
-=======
-            cout << "Order No : " << findIndex(traverseNode->data) + 1<<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
->>>>>>> Stashed changes
             traverseNode = traverseNode->next;
         }
     }
@@ -219,7 +188,7 @@ void dsa::LinkedList<T>::remove()
    }
 }
 
-// ClEAING ALL ELEMENT FROM LIST
+// CLEARNG ALL ELEMENT FROM LIST
 template <typename T>
 void dsa::LinkedList<T>::clear()
 {

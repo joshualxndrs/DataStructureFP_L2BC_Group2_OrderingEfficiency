@@ -73,15 +73,9 @@ void queue<X>::remove()
     }
 }
 
-<<<<<<< Updated upstream
 //function to remove the front element
 template <class X>
 void queue<X>::clear()
-=======
-//function to check if the queue is empty or not
-template <class X>
-void queue<X>::clear() 
->>>>>>> Stashed changes
 {
     // check for queue underflow
     if (isEmpty())
@@ -148,11 +142,7 @@ void queue<X>::display()
     else
     {
         for (int i = front; i <= rear; i++) //will traverse through the queue and print i element then increments itself to print the next element
-<<<<<<< Updated upstream
             cout << "Order No : " << i+1 << "\nCustomer Name : " <<arr[i] << "\n=============================="  << endl;
-=======
-            cout << "Order No : " << i+1 << "\nCustomer Name : " << arr[i] << "\n=============================="  << endl;
->>>>>>> Stashed changes
 
     }
 }
@@ -161,7 +151,3 @@ void queue<X>::display()
 
 
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
