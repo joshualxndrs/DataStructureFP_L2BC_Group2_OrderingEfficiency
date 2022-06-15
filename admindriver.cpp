@@ -14,8 +14,8 @@ int main(){
     string customerTotalTemp;
     double customerTotal = 0.00;
 
-    dsa::LinkedList<string> cusName;
-    dsa::LinkedList<string> cusOrder;
+    queue<string> cusOrder;
+    // dsa::LinkedList<string> cusOrder;
 
     do{
         double customerTotal = 0.00;
@@ -28,8 +28,9 @@ int main(){
             case 1:
                 cout<<"Enter customer name: ";
                 cin>>customerName;
-                cusName.add(customerName);
-
+                customerOrder.append(customerName + "\n\n");
+                customerOrder.append(".....ORDERS : .....\n");
+                
                 displayMenu();
 
                 do{
@@ -110,6 +111,7 @@ int main(){
                             break;
                     }
                 } while(orderNum !=11);
+                customerOrder.append("...................\n");
                 customerTotalTemp = to_string(customerTotal);
                 customerOrder.append("\nTotal Price : $" + customerTotalTemp + "\n");
                 cusOrder.add(customerOrder);
@@ -119,27 +121,23 @@ int main(){
                 break;
             
             case 2:
-                cusName.remove();
                 cusOrder.remove();
                 completion();
                 break;
 
             case 3:
                 displayAlert();
-                cout<<"CUSTOMER NAMES : " <<endl;
-                cout<<"====================\n";
-                cusName.display();
 
-                cout<<"\n====================\n";
+                cout<<"\n==============================\n";
                 cout<<"CUSTOMER ORDERS: " <<endl;
-                cout<<"====================\n";
+                cout<<"==============================\n";
                 cusOrder.display();
 
                 break;
 
             case 4:
-                cusName.clear();
                 cusOrder.clear();
+                cout<<"Order list cleared !"<<endl;
                 break;
 
             case 5:

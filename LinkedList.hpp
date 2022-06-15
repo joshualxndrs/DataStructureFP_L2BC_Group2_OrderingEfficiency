@@ -56,6 +56,8 @@ namespace dsa
         void peek();
 
         void clear();
+
+        int findIndex(T data);
     };
 };
 
@@ -115,22 +117,42 @@ void dsa::LinkedList<T>::add(T data)
     return;
 }
 
+//FINDING THE INDEX OF AN ELEMENT IN THE LIST
+template <typename T>
+int  dsa::LinkedList<T>::findIndex(T data){
+    //Used to keep track of the Node Index
+    int index = 0;  
+
+    dsa::Node<T> *traverseNode = head;
+    //LinkedList traversal for finding the node
+    while(traverseNode!=NULL){
+        if(traverseNode->data == data){         
+            //If element found return index
+            return index;               
+        }
+        traverseNode = traverseNode->next;
+        index++;
+    }   
+    //If element not found
+    return -1;                  
+}
+
 // PRINT ALL ELEMENTS IN THE LIST
 template <typename T>
 void dsa::LinkedList<T>::display()
 {
     dsa::Node<T> *traverseNode = head;
 
-    // IF LIST SIZE IS GREATER THAN ONE
-    if(listsize>1){
+    if(listsize>0){
         while (traverseNode != NULL)
         {
-            cout << traverseNode->data << endl;
+            cout << "Order No : " << findIndex(traverseNode->data) + 1 <<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
             traverseNode = traverseNode->next;
         }
     }
-    // IF LIST SIZE IS ONLY ONE
+    
     else{
+        cout<<"Order List is empty"<<endl;
         cout << traverseNode->data << endl;
     }
 }

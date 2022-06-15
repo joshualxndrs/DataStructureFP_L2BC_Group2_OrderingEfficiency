@@ -23,6 +23,7 @@ public:
     void checkCap();
     void formatToAdmin();
     int totalSize();
+    void clear();
 
 };
  
@@ -73,6 +74,23 @@ void queue<X>::remove()
     }
 }
 
+//function to remove the front element
+template <class X>
+void queue<X>::clear()
+{
+    // check for queue underflow
+    if (isEmpty())
+    {
+        cout << "Currently Empty" << endl;
+        return;
+    }
+    else
+    {
+        for (int i = front; i <= rear; i++)
+            front = (front + 1) % capacity;
+            count--;
+    }
+}
 
 //function to print the front element of the queue
 template <class X>
@@ -119,11 +137,12 @@ void queue<X>::display()
 {
     if (isEmpty())
     {
-        return;
-    }else
+        cout<<"Order List is empty"<<endl;
+    }
+    else
     {
         for (int i = front; i <= rear; i++) //will traverse through the queue and print i element then increments itself to print the next element
-            cout << "Order No : " << i+1 << " \n" << arr[i] << "\n-------------------"  << endl;
+            cout << "Order No : " << i+1 << "\nCustomer Name : " <<arr[i] << "\n=============================="  << endl;
 
     }
 }
