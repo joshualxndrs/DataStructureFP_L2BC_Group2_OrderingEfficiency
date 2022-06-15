@@ -137,29 +137,6 @@ int  dsa::LinkedList<T>::findIndex(T data){
     return -1;                  
 }
 
-
-//Function for finding the node
-template <typename T>
-int  dsa::LinkedList<T>::findIndex(T data){
-	//Used to keep track of the Node Index
-	int index = 0;  
-
-	dsa::Node<T> *traverseNode = head;
-	//LinkedList traversal for finding the node
-	while(traverseNode!=NULL){
-		if(traverseNode->data == data){         
-			//If element found return index
-			return index;               
-		}
-		traverseNode = traverseNode->next;
-		index++;
-	}   
-	//If element not found
-	return -1;                  
-}
-
-
->>>>>>> f05ff00e6b33b62b3f69d6bff750a941b8a0f38e
 // PRINT ALL ELEMENTS IN THE LIST
 template <typename T>
 void dsa::LinkedList<T>::display()
@@ -169,13 +146,13 @@ void dsa::LinkedList<T>::display()
     if(listsize>0){
         while (traverseNode != NULL)
         {
-            cout << "Order No : " << findIndex(traverseNode->data) + 1 <<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
+            cout << "Order No : " << findIndex(traverseNode->data) + 1<<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
             traverseNode = traverseNode->next;
         }
     }
     
     else{
-        cout<<"Order List is empty"<<endl;
+        cout<< "Order list empty."<<endl;
         cout << traverseNode->data << endl;
     }
 }
