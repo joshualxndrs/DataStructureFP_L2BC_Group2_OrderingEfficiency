@@ -7,12 +7,16 @@
 using namespace std;
 
 int main(){
+
+    // VARIABLES
     int adminChoice;
     string customerName;
     int orderNum;
     string customerOrder;
     string customerTotalTemp;
     double customerTotal = 0.00;
+    double dsSize = 0.00;
+    string sizeFormatted;
 
     // queue<string> cusOrder;
     dsa::LinkedList<string> cusOrder;
@@ -91,19 +95,22 @@ int main(){
                             cout << "One portion of CRISPY CHICKEN SANDWICH added! \n" << endl;
                             break;
 
+                        // CHICKEN WAFFLES ORDER
                         case 8:
                             // APPENDS TO ORDER STRING
                             customerOrder.append("Chicken Waffles\n");
                             customerTotal += 10.70;
                             cout << "One portion of CHICKEN WAFFLES added! \n"<< endl;
                             break;
+
+                        // COCA COLA ORDER
                        case 9:
                             // APPENDS TO ORDER STRING
                             customerOrder.append("Coca Cola\n");
                             customerTotal += 1.30;
                             cout << "One bottle of COCA COLA added! \n" << endl;
                             break;
-
+                        // LEMONADE ORDER
                         case 10:
                             // APPENDS TO ORDER STRING
                             customerOrder.append("Lemonade\n");
@@ -111,10 +118,12 @@ int main(){
                             cout << "One bottle of LEMONADE added! \n" << endl;
                             break;
 
+                        // CLOSING ORDER
                         case 11:
                             cout<<"CLOSING ORDER"<<endl;
                             break;
 
+                        // INVALID INPUT
                         default:
                             cout<<"INVALID INPUT"<<endl;
                             break;
@@ -126,6 +135,8 @@ int main(){
 
                 // CONVERTS CUSTOMERTOTAL TO STRING
                 customerTotalTemp = to_string(customerTotal);
+
+                // FORMATS THE TOTAL TO 5 CHARACTERS
                 customerTotalTemp.resize(5);
 
                 // APPENDS TOTAL
@@ -162,8 +173,18 @@ int main(){
                 cout<<"Order list cleared !"<<endl;
                 break;
 
-            // EXIT PROGRAM
+            // DISPLAY MEMORY OF DATA STRUCTURE
             case 5:
+                // REFERENCED FROM CODEFORCES
+                // https://codeforces.com/blog/entry/49371
+                dsSize = sizeof(cusOrder);
+                sizeFormatted = to_string(dsSize);
+
+                // FORMATS THE SIZE TO 5 CHARACTERS
+                sizeFormatted.resize(5);
+                cout << "Memory: " + sizeFormatted + " bytes"<< endl;
+            // EXIT PROGRAM
+            case 6:
                 displayThanks(); // DISPLAYS THANK YOU
                 break;
 
@@ -173,5 +194,5 @@ int main(){
                 break;
             
         }
-    } while(adminChoice!=5);
+    } while(adminChoice!=6);
 }

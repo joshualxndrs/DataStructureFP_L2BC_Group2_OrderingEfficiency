@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// DISPLAY TEXT FOR ADMINDRIVER FILE
+
 void introduction(){
     cout<<"\n================================================================================================================================\n\n";
     cout<<"     _,ggg,_                                                ,gggggggggggggg                      ,ggggggg,                   \n";
@@ -18,7 +20,8 @@ void introduction(){
     cout<<"2. Complete top order"<<endl;
     cout<<"3. Display order queue"<<endl;
     cout<<"4. Clear order queue"<<endl;
-    cout<<"5. Exit Program" << endl;
+    cout<<"5. Check Memory" << endl;
+    cout<<"6. Exit Program" << endl;
     cout<<"========================================================\n"<<endl;
 }
 
