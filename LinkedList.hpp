@@ -37,9 +37,7 @@ namespace dsa
 
         // CONSTRUCTORS
         LinkedList() : head(NULL), tail(NULL), listsize(0){};
-        int capacity = listsize;
         int front = 0;
-        int count = 0;
 
         // FUNCTIONS
         void add(T data);
@@ -49,8 +47,6 @@ namespace dsa
         int size();
 
         int totalsize();
-
-        void checkCap();
 
         bool isEmpty();
 
@@ -63,37 +59,43 @@ namespace dsa
 // IMPLEMENATIONS -----------------------------------------------------------------------------------
 
 // CLASS FUNCTIONS
+// SET DATA IN NODE
 template <typename T>
 void dsa::Node<T>::setData(T data)
 {
     this->data = data;
 }
 
+// GET DATA FROM NODE
 template <typename T>
 T dsa::Node<T>::getData()
 {
     return this->data;
 }
 
+// SET NEXT NODE
 template <typename T>
 void dsa::Node<T>::setNext(Node<T> *node)
 {
     this->next = node;
 }
 
+// GET NEXT NODE
 template <typename T>
 dsa::Node<T> dsa::Node<T>::getNext()
 {
     return this->next;
 }
 
+// ADD ELEMENT TO LIST
 template <typename T>
 void dsa::LinkedList<T>::add(T data)
 {
     // MAKING A NEW NODE FROM DATA
     dsa::Node<T> *newNode = new dsa::Node<T>(data);
 
-    // LIST IS EMPTY
+    // IF LIST IS EMPTY
+    // ADD TO HEAD
     if (listsize == 0)
     {
         this->head = newNode;
@@ -102,6 +104,7 @@ void dsa::LinkedList<T>::add(T data)
         this->listsize++;
         return;
     }
+
     // LIST IS NOT EMPTY
     this->tail->next = newNode;
     this->tail = newNode;
@@ -109,49 +112,40 @@ void dsa::LinkedList<T>::add(T data)
     return;
 }
 
+// PRINT ALL ELEMENTS IN THE LIST
 template <typename T>
 void dsa::LinkedList<T>::display()
 {
-    dsa::Node<T> *traverseNode = this->head;
+    dsa::Node<T> *traverseNode = head;
 
-    while (traverseNode != NULL)
-    {
+    if(listsize>1){
+        while (traverseNode != NULL)
+        {
+            cout << traverseNode->data << endl;
+            traverseNode = traverseNode->next;
+        }
+    }
+    
+    else{
         cout << traverseNode->data << endl;
-        traverseNode = traverseNode->next;
     }
 }
 
+// GETS SIZE OF LIST
 template <typename T>
 int dsa::LinkedList<T>::size()
 {
-    return count;
+    return listsize;
 }
 
-template <typename T>
-int dsa::LinkedList<T>::totalsize()
-{
-    return capacity;
-}
-
-template <typename T>
-void dsa::LinkedList<T>::checkCap()
-{
-    if (isEmpty())
-    {
-        cout << "The List is empty\n";
-    }
-    else
-    {
-        cout << "The List is not empty\n";
-    }
-}
-
+// CHECK IF LIST IS EMPTY
 template <typename T>
 bool dsa::LinkedList<T>::isEmpty()
 {
     return (size() == 0);
 }
 
+// REMOVE ELEMENT FROM LIST
 template <typename T>
 void dsa::LinkedList<T>::remove()
 {
@@ -163,12 +157,12 @@ void dsa::LinkedList<T>::remove()
     }
     else
     {
-        front = (front + 1) % capacity;
-        count--;
+        front = (front + 1) % listsize;
+        listsize--;
     }
 }
 
-
+// PEAK THE TOP OF THE LIST
 template <typename T>
 void dsa::LinkedList<T>::peek()
 {
