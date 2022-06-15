@@ -171,20 +171,39 @@ bool dsa::LinkedList<T>::isEmpty()
     return (size() == 0);
 }
 
+
 // REMOVE ELEMENT FROM LIST
 template <typename T>
 void dsa::LinkedList<T>::remove()
 {
-    // check for  underflow
-    if (isEmpty())
+    dsa::Node<T> *traverseNode = head;
+    if(traverseNode == NULL)
     {
-        cout << "Currently Empty" << endl;
-        return;
+        cout<<"Order list is empty."<<endl;
     }
     else
     {
-        head = head->next;
-        listsize--;
+        head = head -> next;
+        free(traverseNode);
+   }
+}
+
+// ClEAING ALL ELEMENT FROM LIST
+template <typename T>
+void dsa::LinkedList<T>::clear()
+{
+    dsa::Node<T> *traverseNode = head;
+    if(listsize>0){
+        while (traverseNode != NULL)
+        {
+            head = head -> next;
+            free(traverseNode);
+            traverseNode = traverseNode->next;
+        }
+    }
+    
+    else{
+        cout<<"Order List is empty"<<endl;
     }
 }
 
@@ -201,10 +220,4 @@ void dsa::LinkedList<T>::peek()
     {
         cout << "The 1st Order is " << this->head << endl;
     }
-}
-
-template <typename T>
-void dsa::LinkedList<T>::clear()
-{
-
 }

@@ -13,9 +13,10 @@ int main(){
     string customerOrder;
     string customerTotalTemp;
     double customerTotal = 0.00;
+    
 
-    queue<string> cusOrder;
-    // dsa::LinkedList<string> cusOrder;
+    // queue<string> cusOrder;
+    dsa::LinkedList<string> cusOrder;
 
     do{
         double customerTotal = 0.00;
@@ -127,7 +128,6 @@ int main(){
 
             case 3:
                 displayAlert();
-
                 cout<<"\n==============================\n";
                 cout<<"CUSTOMER ORDERS: " <<endl;
                 cout<<"==============================\n";

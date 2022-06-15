@@ -20,7 +20,6 @@ public:
     bool isEmpty();
     bool isFull();
     void display();
-    void checkCap();
     void formatToAdmin();
     int totalSize();
     void clear();
@@ -146,23 +145,6 @@ void queue<X>::display()
 
     }
 }
-
-//function to check the current capacity of the queue
-template <class X>
-void queue<X>::checkCap(){
-    if (isEmpty()) {
-        cout << "The queue is empty\n";
-    }
-    else if(isFull()) 
-    {
-    cout << "The queue is full\n"; 
-    }
-    else {
-        cout << "The queue is not empty\n";
-    }
-}
-
-
 
 
 
