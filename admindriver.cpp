@@ -110,7 +110,7 @@ int main(){
                     }
                 } while(orderNum !=11);
                 customerTotalTemp = to_string(customerTotal);
-                customerOrder.append("\nTotal Price : $" + customerTotalTemp );
+                customerOrder.append("\nTotal Price : $" + customerTotalTemp);
                 cusOrder.add(customerOrder);
                 customerOrder = "";
                 customerTotalTemp ="";
