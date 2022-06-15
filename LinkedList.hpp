@@ -137,8 +137,6 @@ int  dsa::LinkedList<T>::findIndex(T data){
     return -1;                  
 }
 
-<<<<<<< HEAD
-=======
 
 //Function for finding the node
 template <typename T>
@@ -171,10 +169,6 @@ void dsa::LinkedList<T>::display()
     if(listsize>0){
         while (traverseNode != NULL)
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> f05ff00e6b33b62b3f69d6bff750a941b8a0f38e
             cout << "Order No : " << findIndex(traverseNode->data) + 1 <<"\nCustomer Name : "<< traverseNode->data << "\n=============================="<<endl;
             traverseNode = traverseNode->next;
         }
