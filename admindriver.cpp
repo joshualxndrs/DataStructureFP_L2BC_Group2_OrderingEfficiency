@@ -138,6 +138,8 @@ int main(){
                 break;
 
             case 4:
+                cusName.clear();
+                cusOrder.clear();
                 break;
 
             case 5:

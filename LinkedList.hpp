@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
 
-// DECLARATIONS ---------------------------------------------------------------------------------------------
+// REFERENCED FROM FABIO'S CODE
+// https://github.com/FabioSebs/DataStructureTA/blob/main/Week5/linkedlist.hpp
+
 namespace dsa
 {
     template <typename T>
@@ -37,7 +39,6 @@ namespace dsa
 
         // CONSTRUCTORS
         LinkedList() : head(NULL), tail(NULL), listsize(0){};
-        int front = 0;
 
         // FUNCTIONS
         void add(T data);
@@ -53,6 +54,8 @@ namespace dsa
         void remove();
 
         void peek();
+
+        void clear();
     };
 };
 
@@ -118,6 +121,7 @@ void dsa::LinkedList<T>::display()
 {
     dsa::Node<T> *traverseNode = head;
 
+    // IF LIST SIZE IS GREATER THAN ONE
     if(listsize>1){
         while (traverseNode != NULL)
         {
@@ -125,7 +129,7 @@ void dsa::LinkedList<T>::display()
             traverseNode = traverseNode->next;
         }
     }
-    
+    // IF LIST SIZE IS ONLY ONE
     else{
         cout << traverseNode->data << endl;
     }
@@ -157,7 +161,7 @@ void dsa::LinkedList<T>::remove()
     }
     else
     {
-        front = (front + 1) % listsize;
+        head = head->next;
         listsize--;
     }
 }
@@ -175,4 +179,10 @@ void dsa::LinkedList<T>::peek()
     {
         cout << "The 1st Order is " << this->head << endl;
     }
+}
+
+template <typename T>
+void dsa::LinkedList<T>::clear()
+{
+
 }
