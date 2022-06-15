@@ -13,7 +13,6 @@ int main(){
     string customerOrder;
     string customerTotalTemp;
     double customerTotal = 0.00;
-    
 
     // queue<string> cusOrder;
     dsa::LinkedList<string> cusOrder;
@@ -26,6 +25,7 @@ int main(){
         cin>>adminChoice;
 
         switch(adminChoice){
+            // ADD CUSTOMER
             case 1:
                 cout<<"Enter customer name: ";
                 cin>>customerName;
@@ -39,29 +39,35 @@ int main(){
                     cin>> orderNum;
 
                     switch(orderNum){
+                        // TRUFFLE FRIES ORDER
                         case 1:
                             customerOrder.append("Truffle Fries\n");
                             customerTotal += 6.50;
                             cout<<"One portion of TRUFFLE FRIES added!\n"<<endl;
                             break;
 
+                        // MAC AND CHEESE BITES ORDER
                         case 2:
                             customerOrder.append("Mac and Cheese Bites\n");
                             customerTotal += 8.20;
                             cout <<"One portion of MAC AND CHEESE BITES added!\n"<<endl;
                             break;
 
+                        // MOZZARELLA STICKS ORDER
                         case 3:
                             customerOrder.append("Mozzarella Sticks\n");
                             customerTotal += 9.40;
                             cout<<"One portion of MOZZARELLA STICKS added!\n"<<endl;
                             break;
 
+                        // COCKTAIL MEATBALLS ORDER
                         case 4:
                             customerOrder.append("Cocktail Meatballs\n");
                             customerTotal += 6.50;
                             cout<<"One portion of COCKTAIL MEATBALLS added!\n "<<endl;
                             break;
+                        
+                        // KOREAN FIRE WINGS ORDER
                         case 5:
                             // APPENDS TO ORDER STRING
                             customerOrder.append("Korean Fire Wings\n");
@@ -69,6 +75,7 @@ int main(){
                             cout << "One portion of KOREAN FIRE WINGS added! \n"<< endl;
                             break;
 
+                        // SMASHED CHEESE BURGERS ORDER
                         case 6:
                             // APPENDS TO ORDER STRING
                             customerOrder.append("Smashed Cheese Burgers\n");
@@ -76,6 +83,7 @@ int main(){
                             cout << "One portion of SMASHED CHEESE BURGERS added! \n" << endl;
                             break;
 
+                        // CRISPY CHICKEN SANDWICH ORDER
                         case 7:
                             // APPENDS TO ORDER STRING
                             customerOrder.append("Crispy Chicken Sandwich\n");
@@ -112,6 +120,8 @@ int main(){
                             break;
                     }
                 } while(orderNum !=11);
+
+                
                 customerOrder.append("...................\n");
                 customerTotalTemp = to_string(customerTotal);
                 customerOrder.append("\nTotal Price : $" + customerTotalTemp + "\n");
@@ -121,11 +131,13 @@ int main(){
                 customerTotal=0;
                 break;
             
+            // REMOVES FIRST ORDER
             case 2:
                 cusOrder.remove();
                 completion();
                 break;
 
+            // DISPLAYS ALL ORDERS
             case 3:
                 displayAlert();
                 cout<<"\n==============================\n";
@@ -135,15 +147,18 @@ int main(){
 
                 break;
 
+            // CLEAR ORDER LIST
             case 4:
                 cusOrder.clear();
                 cout<<"Order list cleared !"<<endl;
                 break;
 
+            // EXIT PROGRAM
             case 5:
-                displayThanks();
+                displayThanks(); // DISPLAYS THANK YOU
                 break;
 
+            // IF USER ENTERS NUMBERS OUTSIDE OF OPTIONS
             default:
                 cout<<"INVALID INPUT"<<endl;
                 break;
