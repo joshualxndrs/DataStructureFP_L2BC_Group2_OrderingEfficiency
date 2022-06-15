@@ -36,7 +36,9 @@ namespace dsa
         int size;
 
         // CONSTRUCTORS
-        LinkedList() : head(NULL), tail(NULL), size(0){}, capacity = size, count = 0;
+        LinkedList() : head(NULL), tail(NULL), size(0){};
+        int capacity = size;
+        int count = 0;
 
         // FUNCTIONS
         void add(T data);
