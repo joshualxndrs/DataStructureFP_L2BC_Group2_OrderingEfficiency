@@ -9,14 +9,14 @@ using namespace std;
 int main(){
 
     // VARIABLES
-    int adminChoice;
-    string customerName;
-    int orderNum;
-    string customerOrder;
-    string customerTotalTemp;
-    double customerTotal = 0.00;
-    double dsSize = 0.00;
-    string sizeFormatted;
+    int adminChoice; // CHOICE FOR FIRST MENU
+    string customerName; // CUSTOMER NAME VARIABLE
+    int orderNum; // CHOICE FOR ORDER NUMBER
+    string customerOrder; // CUSTOMER ORDER VARIABLE
+    string customerTotalTemp; // TEMPORARY VARIABLE FOR CUSTOMER ORDER
+    double customerTotal = 0.00; // CUSTOMER ORDER VARIABLE
+    double dsSize = 0.00; // SIZE OF DATA STRUCTURE
+    string sizeFormatted; // VARIABLE FOR DATA STRUCTURE SIZE AS A STRING
 
     // queue<string> cusOrder;
     dsa::LinkedList<string> cusOrder;
@@ -154,7 +154,7 @@ int main(){
             // REMOVES FIRST ORDER
             case 2:
                 cusOrder.remove();
-                completion();
+                completion(); // DISPLAYS COMPLETION MESSAGE
                 break;
 
             // DISPLAYS ALL ORDERS
@@ -177,12 +177,17 @@ int main(){
             case 5:
                 // REFERENCED FROM CODEFORCES
                 // https://codeforces.com/blog/entry/49371
-                dsSize = sizeof(cusOrder);
-                sizeFormatted = to_string(dsSize);
+
+                dsSize = sizeof(cusOrder); // GETS SIZE OF CUSORDER
+                sizeFormatted = to_string(dsSize); // CONVERTS THE SIZE TO STRING
 
                 // FORMATS THE SIZE TO 5 CHARACTERS
                 sizeFormatted.resize(5);
+
+                // DISPLAYS THE MEMORY
                 cout << "Memory: " + sizeFormatted + " bytes"<< endl;
+                break;
+
             // EXIT PROGRAM
             case 6:
                 displayThanks(); // DISPLAYS THANK YOU
