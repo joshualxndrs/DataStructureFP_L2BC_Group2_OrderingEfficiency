@@ -11,7 +11,7 @@ class queue
     int count;      //size count of the queue (to increment)
  
 public:
-    queue(int size = 10);     //constructor with default size 10 
+    queue(int size = 100);     //constructor with default size 100
  
     void remove();            //the functions included in the class queue
     void add(X x);
@@ -85,9 +85,10 @@ void queue<X>::clear()
     }
     else
     {
-        for (int i = front; i <= rear; i++)
+        for (int i = front; i <= rear; i++){
             front = (front + 1) % capacity;
             count--;
+        }
     }
 }
 
