@@ -12,4 +12,4 @@ Data Structures Final Project repository<br>
 - display.hpp - Header file containing display methods
 - LinkedList.cpp - Header file containing the code for Linked Lists
 - queue.hpp - Header file containing the code for Queues
-- Project Report.pdf - PDF of the Project Report
+- ProjectReport.pdf - PDF of the Project Report
